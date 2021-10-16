@@ -7,27 +7,26 @@ import java.io.Serializable;
 public class CategoryDto implements Serializable {
 
     private Long id;
-    private String nome;
+    private String name;
 
     public CategoryDto() {
     }
 
-    public CategoryDto(Long id, String nome) {
-        this.id = id;
-        this.nome = nome;
+    public CategoryDto(Category entity){
+        this.id = entity.getId();
+        this.name = entity.getName();
     }
 
-    public CategoryDto(Category entity) {
-        this.id = entity.getId();
-        this.nome = entity.getName();
+    public CategoryDto(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
-
 }
